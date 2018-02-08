@@ -16,7 +16,7 @@ while x == 0:
 
 while x == 1:
     #ask for the value to assign to W
-    W = input("What is your weight? (Enter in Kg): ")
+    W = input("What is your weight?: ")
     try:
         #test if W is a float
         W = float(W)
@@ -29,25 +29,26 @@ while x == 1:
     except:
         # if there is an exception in required data retry loop
         print("Enter a positive integer.")
+    while x ==2:
+        #Ask what unit weight was entered in
+        unit = input("What units did you use for your weight? ('Kg' or 'Lbs): ")
+        if unit == "Kg":
+            #Convert to grams by multiplying by 1000 if entered in Kgs
+            W = W*1000
+            x = 3
+        elif unit == "Lbs":
+            #Convert to grams by multiplying by 453.592 if entered in Lbs
+            W = W*453.592
+            x = 3
+        else:
+            print("Please enter either 'Kg' or 'Lbs'.")
 
-while x == 2:
+while x == 3:
     #ask for the value to assign to t
     t = input("How long since you started drinking? (Enter in hours): ")
     try:
         t = float(t)
         if t >= 0:
-            x = 3
-        else:
-            print("Enter a positive integer.")
-    except:
-        print("Enter a positive integer.")
-
-while x == 3:
-    #ask for the value to assign to A
-    A = input("How many standard drinks did you consume? (In total): ")
-    try:
-        A = float(A)
-        if A >= 0:
             x = 4
         else:
             print("Enter a positive integer.")
@@ -55,19 +56,32 @@ while x == 3:
         print("Enter a positive integer.")
 
 while x == 4:
+    #ask for the value to assign to A
+    A = input("How many standard drinks did you consume? (In total): ")
+    try:
+        A = float(A)
+        if A >= 0:
+            x = 5
+        else:
+            print("Enter a positive integer.")
+    except:
+        print("Enter a positive integer.")
+
+while x == 5:
     #ask for the value to assign to D
     D = input("What is your driving status? (Enter 'L', 'P' or 'FL': ")
     if D == "L":
-        x = 5
+        x = 6
     elif D == "P":
-        x = 5
+        x = 6
     elif D == "FL":
-        x = 5
+        x = 6
     else:
         print("Please enter 'L', 'P' or 'FL'.")
 
 A = 10*A
-W = W*1000
+
+
 
 #Calculate the BAC using equation
 BAC = round((A/(r*W))*100-(0.00015*t),2)
