@@ -72,8 +72,8 @@ if u == 1:
     while x == 2:
         #ask for the value to assign to a
         print("Please enter your height for feet then inches as directed.")
-        #ask for height in feet and ensure it is whole number by rounding
-        h1 = round(input("Please enter your height in feet: "),0)
+        #ask for height in feet
+        h1 = input("Please enter your height in feet: ")
         #ask for height in inches
         h2 = input("Please enter the inches to add to your height in feet: ")
         try:
@@ -81,7 +81,7 @@ if u == 1:
             h1 = float(h1)
             h2 = float(h2)
             #test if entered integer is positive integer
-            if h1 >= 0 or h2 >= 0:
+            if h1 >= 0 and h2 >= 0:
                 #raise x value to end loop
                 x = 3
             else:
@@ -93,6 +93,8 @@ if u == 1:
 
 #If imperial units were used convert to metric
 if u == 1:
+    #round height in feet to nearest whole number
+    h1 = round(h1,0)
     #convert height in feet and inches to metres
     h = (h1*12+h2)*0.0254
     #convert weight in pounds to kilograms
@@ -106,10 +108,14 @@ print("Your BMI is:",round(BMI,2))
 
 #test what BMI weight range the use is in a print appropriate response.
 if BMI < 18.5:
+    #print the users BMI range
     print("You are underweight.")
 if 18 <= BMI < 25:
+    #print the users BMI range
     print("You are a healthy weight.")
 if 25 <= BMI < 30:
+    #print the users BMI range
     print("You are overweight.")
 if BMI > 30:
+    #print the users BMI range
     print("You are obese.")
