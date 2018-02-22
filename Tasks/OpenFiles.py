@@ -13,3 +13,10 @@ for line in f:
 
 #close file
 f.close()
+
+f = open(fname, "a")
+#write to file
+f.write('\n')
+f.write(input("What do you want to add to the file? "))
+
+f.close()
