@@ -1,6 +1,6 @@
 
 x = 0
-def FloatFunc(x):
+def FloatInput(x):
     while x == 0:
         #ask for the value to assign to a
         a = input("Input text here:")

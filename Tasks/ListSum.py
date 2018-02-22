@@ -13,16 +13,12 @@ while (UI != ""):
         print("The current values are: ")
         print(list)
 
-#palindrome
-def Pal(list):
-    revlist = list[::-1]
-    print(list)
-    print(revlist)
 
-    if list == revlist:
-        print("The list is a palindrome")
-    else:
-        print("The list is not a palindrome")
-    return(Pal)
+def SumList(list):
+    total = 0
+    for i in list:
+        total = total + i
+    print(total)
+    return SumList
 
-print(Pal(list))
+SumList(list)

@@ -13,16 +13,17 @@ while (UI != ""):
         print("The current values are: ")
         print(list)
 
-#palindrome
-def Pal(list):
-    revlist = list[::-1]
-    print(list)
-    print(revlist)
 
-    if list == revlist:
-        print("The list is a palindrome")
-    else:
-        print("The list is not a palindrome")
-    return(Pal)
+def OddPos(list):
+    x = 0
+    print(list[x])
 
-print(Pal(list))
+    while x <= len(list):
+        if x <= len(list):
+            x = x+2
+            if x < len(list):
+                print(list[x])
+
+    return OddPos
+
+print(OddPos(list))
